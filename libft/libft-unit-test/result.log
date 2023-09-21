@@ -40,7 +40,7 @@ Test code:
 
 Diffs:
      strlcat: |31|
-  ft_strlcat: |4|
+  ft_strlcat: |3|
 
 [crash]: your strlcat crush when null parameter is sent with a size of 0
 Test code:
