@@ -1,5 +1,5 @@
+#include <stdio.h>
 #include <unistd.h>
-#include<stdio.h>
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
@@ -9,7 +9,9 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 
 	s = (char *)src;
 	d = (char *)dst;
-	if(d > s)
+	if (d == NULL && s == NULL)
+		return (NULL);
+	if (d > s)
 	{
 		i = 1;
 		while (i < (int)len + 1)
@@ -46,5 +48,5 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 //     // ft_memmove(src + 3, src, strlen(src) + 1);
 //     printf("Test Case 2: %s\n", src + 3);  // 期待される出力: "lo, World!"
 
-//     return 0;
+//     return (0);
 // }

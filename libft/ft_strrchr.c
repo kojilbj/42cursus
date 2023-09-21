@@ -11,6 +11,8 @@ char	*ft_strrchr(const char *s, int c)
 			ans = str;
 		str++;
 	}
+	if (c == 0)
+		return (str);
 	return (ans);
 }
 

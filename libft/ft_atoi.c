@@ -1,5 +1,5 @@
 
-int	ft_atoi(char *str)
+int	ft_atoi(const char *str)
 {
 	int	result;
 	int	sign;
@@ -9,15 +9,11 @@ int	ft_atoi(char *str)
 	result = 0;
 	sign = 1;
 	while (*str && (*str == ' ' || (*str >= 9 && *str <= 13)))
-	{
 		str++;
-	}
 	while (*str && (*str == '+' || *str == '-'))
 	{
 		if (*str == '-')
-		{
 			sign *= -1;
-		}
         if(sign_fg == 1)
             return result;
         sign_fg = 1;

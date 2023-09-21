@@ -12,10 +12,12 @@ static size_t	ft_strlen(const char *s)
 
 char	*ft_strdup(const char *s1)
 {
-	char	*dest;
-	int		i;
+	char *dest;
+	int i;
 
 	dest = malloc(ft_strlen((char *)s1) + 1);
+	if (dest == NULL)
+		return (NULL);
 	i = 0;
 	while (s1[i])
 	{

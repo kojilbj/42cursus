@@ -1,19 +1,21 @@
-#include<stdio.h>
-#include<stdlib.h>
+#include <stdio.h>
+#include <stdlib.h>
 
-void    *ft_calloc(size_t count, size_t size)
+void	*ft_calloc(size_t count, size_t size)
 {
-    char    *dst;
-    int     i;
+	char	*dst;
+	int		i;
 
-    i = 0;
-    dst = malloc(count * (int)size);
-    while (i < (int)count * (int)size)
-    {
-        dst[i] = 0;
-        i++;
-    }
-    return dst;
+	i = 0;
+	dst = malloc(count * (int)size);
+	if (dst == NULL)
+		return (NULL);
+	while (i < (int)count * (int)size)
+	{
+		dst[i] = 0;
+		i++;
+	}
+	return (dst);
 }
 
 // int main(void)
@@ -29,5 +31,5 @@ void    *ft_calloc(size_t count, size_t size)
 //     printf("%s\n", s1);
 //     printf("%c\n", s1[i]);
 //     printf("%c\n", s1[i + 1]);
-//     return 0;
+//     return (0);
 // }

@@ -9,6 +9,8 @@ char	*ft_strchr(const char *s, int c)
 			return (str);
 		str++;
 	}
+	if (c == 0)
+		return (str);
 	return (0);
 }
 
@@ -19,5 +21,5 @@ char	*ft_strchr(const char *s, int c)
 // {
 //     printf("%s\n", ft_strchr("Hello, world", 'h'));
 //     printf("%s\n", strchr("Hello, world", 'h'));
-//     return 0;
+//     return (0);
 // }
