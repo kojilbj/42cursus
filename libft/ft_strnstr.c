@@ -15,7 +15,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 			tmp_str = (char *)haystack;
 			while (*needle && len > 0)
 			{
-                len--;
+		                len--;
 				if (*haystack != *needle)
 					break ;
 				else

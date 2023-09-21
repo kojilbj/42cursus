@@ -1,30 +1,5 @@
-#include <stdlib.h>
-
-static size_t	ft_strlen(const char *s)
-{
-	size_t	length;
-
-	length = 0;
-	while (s[length])
-		length++;
-	return (length);
-}
-
-static char	*ft_strdup(char *src)
-{
-	char	*dest;
-	int		i;
-
-	dest = malloc(ft_strlen(src) + 1);
-	i = 0;
-	while (src[i])
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	dest[i] = 0;
-	return (dest);
-}
+#include <unistd.h>
+#include<stdio.h>
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
@@ -32,13 +7,44 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	char	*d;
 	int		i;
 
-	s = ft_strdup((char *)src);
-	d = dst;
-	i = 0;
-	while (s[i] && i < len)
+	s = (char *)src;
+	d = (char *)dst;
+	if(d > s)
 	{
-		d[i] = s[i];
-		i++;
+		i = 1;
+		while (i < (int)len + 1)
+		{
+			d[len - i] = s[len - i];
+			i++;
+		}
+	}
+	else
+	{
+		i = 0;
+		while (i < (int)len)
+		{
+			d[i] = s[i];
+			i++;
+		}
 	}
 	return (d);
 }
+
+// #include<string.h>
+
+// int main() {
+//     char src[] = "Hello, World!";
+//     char dest[20];
+
+//     // テストケース 1: オーバーラップなしのコピー
+//     ft_memmove(dest, src, strlen(src) + 1);
+//     // memmove(dest, src, strlen(src) + 1);
+//     printf("Test Case 1: %s\n", dest);  // 期待される出力: "Hello, World!"
+
+//     // テストケース 2: src と dest がオーバーラップ
+//     memmove(src + 3, src, strlen(src) + 1);
+//     // ft_memmove(src + 3, src, strlen(src) + 1);
+//     printf("Test Case 2: %s\n", src + 3);  // 期待される出力: "lo, World!"
+
+//     return 0;
+// }
