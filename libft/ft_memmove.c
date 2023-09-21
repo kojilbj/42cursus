@@ -37,8 +37,8 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 //     char dest[20];
 
 //     // テストケース 1: オーバーラップなしのコピー
-//     ft_memmove(dest, src, strlen(src) + 1);
-//     // memmove(dest, src, strlen(src) + 1);
+//     // ft_memmove(dest, src, strlen(src) + 1);
+//     memmove(dest, src, strlen(src) + 1);
 //     printf("Test Case 1: %s\n", dest);  // 期待される出力: "Hello, World!"
 
 //     // テストケース 2: src と dest がオーバーラップ

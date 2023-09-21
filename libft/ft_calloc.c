@@ -7,8 +7,8 @@ void    *ft_calloc(size_t count, size_t size)
     int     i;
 
     i = 0;
-    dst = malloc(count * size);
-    while (i < count * size)
+    dst = malloc(count * (int)size);
+    while (i < (int)count * (int)size)
     {
         dst[i] = 0;
         i++;
