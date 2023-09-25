@@ -1,7 +1,8 @@
+#include "libft.h"
 
 int	ft_atoi(const char *str)
 {
-	int	result;
+	long	result;
 	int	sign;
     int sign_fg;
 
@@ -24,16 +25,15 @@ int	ft_atoi(const char *str)
 		result = result * 10 + *str - '0';
 		str++;
 	}
-	return (result * sign);
+	return (int)(result * sign);
 }
 
-// #include <stdio.h>
-// int main(void)
-// {
-//     printf("%d\n", ft_atoi("    -12g3"));
-//     printf("%d\n", ft_atoi("    --12g3"));
-//     printf("%d\n", ft_atoi("1.2"));
-//     printf("%d\n", ft_atoi("-1"));
-//     printf("%d\n", ft_atoi("0"));
-//     return (0);
-// }
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void)
+{
+    printf("%d\n", ft_atoi("9223372036854775808"));
+    printf("%d\n", atoi("9223372036854775808"));
+    return (0);
+}

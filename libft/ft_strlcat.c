@@ -1,17 +1,4 @@
-#include<unistd.h>
-
-static size_t	ft_length(char *str)
-{
-	size_t	i;
-
-	i = 0;
-	while (*str)
-	{
-		str++;
-		i++;
-	}
-	return (i);
-}
+#include "libft.h"
 
 size_t	ft_strlcat(char *dest, const char *src, size_t dstsize)
 {
@@ -20,8 +7,10 @@ size_t	ft_strlcat(char *dest, const char *src, size_t dstsize)
 	size_t	space_left;
 	size_t	i;
 
-	dest_len = ft_length(dest);
-	src_len = ft_length((char *)src);
+	if (dstsize == 0 && dest == 0)
+		return ft_strlen((char *)src);
+	dest_len = ft_strlen(dest);
+	src_len = ft_strlen((char *)src);
 	if (dstsize <= dest_len)
 		return (dstsize + src_len);
 	space_left = dstsize - dest_len - 1;

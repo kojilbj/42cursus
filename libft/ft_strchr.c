@@ -1,11 +1,15 @@
+#include "libft.h"
+
 char	*ft_strchr(const char *s, int c)
 {
 	char	*str;
+	unsigned	int	i;
 
+	i = c;
 	str = (char *)s;
 	while (*str)
 	{
-		if (*str == c)
+		if (*str == i % 128)
 			return (str);
 		str++;
 	}

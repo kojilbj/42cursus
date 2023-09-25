@@ -1,24 +1,28 @@
-#include <stdio.h>
+#include "libft.h"
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
 	char	*str;
+	unsigned	int	i;
 
+	i = c;
 	str = (char *)s;
-	while (*str && n > 0)
+	while (n > 0)
 	{
-		if (*str == c)
+		if (*str == i % 128)
 			return (str);
 		n--;
 		str++;
 	}
-	if (c == 0)
-		return (str);
 	return (0);
 }
 
+// #include<stdio.h>
+// #include<string.h>
 // int main(void)
 // {
-//     printf("%s\n", (char *)ft_memchr("Hello", 'o', 5));
+// 	char s[] = {0, 1, 2 ,3 ,4 ,5};
+//     printf("%s\n", (char *)ft_memchr(s, 2 + 256, 3));
+//     printf("%s\n", (char *)memchr(s, 2 + 256, 3));
 //     return (0);
 // }
