@@ -24,6 +24,16 @@ int	ft_atoi(const char *str)
 	{
 		result = result * 10 + *str - '0';
 		str++;
+		if(result >= LONG_MAX / 10)
+		{
+			if(*str > '0' && *str <= '9')
+			{
+				if(sign == -1)
+					return (int)LONG_MIN;
+				if(result >= LONG_MAX / 10)
+					return(int)(LONG_MAX);
+			}
+		}
 	}
 	return (int)(result * sign);
 }
@@ -33,7 +43,7 @@ int	ft_atoi(const char *str)
 
 int main(void)
 {
-    printf("%d\n", ft_atoi("9223372036854775808"));
-    printf("%d\n", atoi("9223372036854775808"));
+    printf("%d\n", ft_atoi("9223372036854775806"));
+    printf("%d\n", atoi("9223372036854775806"));
     return (0);
 }
