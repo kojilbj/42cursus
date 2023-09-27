@@ -14,16 +14,16 @@
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	size_t	length;
-	int		i;
+	size_t length;
+	size_t i;
 
 	length = 0;
 	i = 0;
 	while (src[length])
 		length++;
-	if(dstsize == 0)
-		return length;
-	while (1 < (dstsize  - i) && src[i])
+	if (dstsize == 0)
+		return (length);
+	while (1 < (dstsize - i) && src[i])
 	{
 		dst[i] = src[i];
 		i++;
@@ -31,16 +31,3 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	dst[i] = '\0';
 	return (length);
 }
-
-// #include<string.h>
-// int	main(void)
-// {
-// 	unsigned int	copied_len;
-
-// 	char src[20] = "saasas";
-// 	char dest[10]; // バッファサイズは十分に大きくする必要があります
-// 	copied_len = ft_strlcpy(dest, src, sizeof(src));
-// 	printf("Copied string: %s\n", dest);
-// 	printf("Length of copied string: %u\n", copied_len);
-// 	return (0);
-// }

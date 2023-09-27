@@ -33,7 +33,7 @@ int	main(void)
 	/* 17,18 too big 1*/ check_calloc(LONG_MAX, 1);
 	/* 19,20 too big 2*/ check_calloc(ULONG_MAX, 1);
 	/* 21,22 too big 3*/ check_calloc(SIZE_MAX, 1);
-	// /* 23,24 very big 1*/ check_calloc(INT_MAX, 1);
-	// /* 25,26 very big 2*/ check_calloc(UINT_MAX, 1);
+	/* 23,24 very big 1*/ check_calloc(INT_MAX, 1);
+	/* 25,26 very big 2*/ check_calloc(UINT_MAX, 1);
 	return (0);
 }
