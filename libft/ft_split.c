@@ -84,7 +84,7 @@ char	**ft_split(char const *s, char c)
 			s++;
 		if (*s == 0)
 			break ;
-		while (*s != c)
+		while (*s != c && *s)
 			strs[i][j++] = *(s++);
 		strs[i++][j] = 0;
 		j = 0;
