@@ -39,16 +39,16 @@ SRCS =	ft_isalpha.c \
 		ft_split.c \
 HEAD = libft.h
 OBJS = $(SRCS:.c=.o)
-BONUS_SRCS_FILES =	ft_lstnew.c ft_lstadd_front.c\ft_lstsize.c \
-					ft_lstlast.c \
-					ft_lstadd_back.c \
-					ft_lstdelone.c \
-					ft_lstclear.c \
-					ft_lstiter.c \
-					ft_lstmap.c
-ifdef WITH_BONUS
-SRCS += $(BONUS_SRCS_FILES)
-endif
+# BONUS_SRCS_FILES =	ft_lstnew.c ft_lstadd_front.c\ft_lstsize.c \
+# 					ft_lstlast.c \
+# 					ft_lstadd_back.c \
+# 					ft_lstdelone.c \
+# 					ft_lstclear.c \
+# 					ft_lstiter.c \
+# 					ft_lstmap.c
+# ifdef WITH_BONUS
+# SRCS += $(BONUS_SRCS_FILES)
+# endif
 
 all: $(NAME)
 

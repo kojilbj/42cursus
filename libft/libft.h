@@ -3,6 +3,14 @@
 
 # include <limits.h>
 # include <unistd.h>
+# include <stdlib.h>
+
+typedef struct  s_list
+{
+    void    *content;
+    void    *next;
+}   t_list;
+
 
 int		ft_atoi(const char *str);
 void	ft_bzero(void *s, size_t n);
