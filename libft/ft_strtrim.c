@@ -6,13 +6,11 @@
 /*   By: kojwatan < kojwatan@student.42tokyo.jp>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 17:46:06 by kojwatan          #+#    #+#             */
-/*   Updated: 2023/09/28 18:48:40 by kojwatan         ###   ########.fr       */
+/*   Updated: 2023/09/28 20:53:20 by kojwatan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <string.h>
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
@@ -34,9 +32,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 	trimmed_str = malloc(end - start + 2);
 	if (trimmed_str == NULL)
 		return (NULL);
-	i = start;
-	while (i <= end)
-		trimmed_str[i++ - start] = s1[i++];
-	trimmed_str[end - start + 1] = '\0';
+	i = 0;
+	while (&s1[start] <= &s1[end])
+		trimmed_str[i++] = s1[start++];
+	trimmed_str[i] = '\0';
 	return (trimmed_str);
 }

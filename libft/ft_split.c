@@ -6,7 +6,7 @@
 /*   By: kojwatan < kojwatan@student.42tokyo.jp>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 17:45:37 by kojwatan          #+#    #+#             */
-/*   Updated: 2023/09/28 18:57:35 by kojwatan         ###   ########.fr       */
+/*   Updated: 2023/09/28 20:22:52 by kojwatan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,5 +114,5 @@ char	**ft_split(char const *s, char c)
 	strs = split_alloc(strs, (char *)s, c, count_words(s, c));
 	if (strs == NULL)
 		return (NULL);
-	return (split_help(strs, s, c));
+	return (split_help(strs, (char *)s, c));
 }

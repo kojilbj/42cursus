@@ -6,7 +6,7 @@
 /*   By: kojwatan < kojwatan@student.42tokyo.jp>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 17:45:22 by kojwatan          #+#    #+#             */
-/*   Updated: 2023/09/28 18:39:47 by kojwatan         ###   ########.fr       */
+/*   Updated: 2023/09/28 20:25:52 by kojwatan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,12 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	{
 		i = 1;
 		while (i < len + 1)
-			d[len - i++] = s[len - i++];
+		{
+			d[len - i] = s[len - i];
+			i++;
+		}
 	}
 	else
-	{
-		i = 0;
-		while (i < len)
-			d[i++] = s[i++];
-	}
+		ft_memcpy(d, s, len);
 	return (d);
 }

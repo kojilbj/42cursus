@@ -6,7 +6,7 @@
 /*   By: kojwatan < kojwatan@student.42tokyo.jp>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 17:46:08 by kojwatan          #+#    #+#             */
-/*   Updated: 2023/09/28 18:49:04 by kojwatan         ###   ########.fr       */
+/*   Updated: 2023/09/28 21:46:50 by kojwatan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,20 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	i = 0;
 	if (s == NULL)
 		return (NULL);
-	substr = malloc(len + 1);
-	if (substr == NULL)
-		return (NULL);
 	if (start >= ft_strlen(s))
 		return (ft_strdup(""));
+	if (len < ft_strlen(&s[start]))
+		substr = malloc(len + 1);
+	else
+		substr = malloc(ft_strlen(&s[start]) + 1);
+	if (substr == NULL)
+		return (NULL);
 	while (i < len)
 	{
-		substr[i] = s[start];
-		i++;
-		start++;
+		if (s[start])
+			substr[i++] = s[start++];
+		else
+			break ;
 	}
 	substr[i] = 0;
 	return (substr);
