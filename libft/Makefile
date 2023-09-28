@@ -48,7 +48,6 @@ BONUS_SRCS =	ft_lstnew.c ft_lstadd_front.c ft_lstsize.c \
 
 ifdef WITH_BONUS
 	SRCS += $(BONUS_SRCS)
-	OBJS += $(BONUS_OBJS)
 endif
 
 HEAD = libft.h
