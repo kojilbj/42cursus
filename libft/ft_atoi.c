@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kojwatan < kojwatan@student.42tokyo.jp>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/09/28 17:44:06 by kojwatan          #+#    #+#             */
+/*   Updated: 2023/09/28 17:51:34 by kojwatan         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 static long	ft_strtol(const char *str, int sign)
@@ -41,15 +53,5 @@ int	ft_atoi(const char *str)
 		sign_fg = 1;
 		str++;
 	}
-	return (int)(ft_strtol(str, sign));
+	return ((int)(ft_strtol(str, sign)));
 }
-
-// #include <stdio.h>
-// #include <stdlib.h>
-
-// int main(void)
-// {
-//     printf("%d\n", ft_atoi("9223372036854775806"));
-//     printf("%d\n", atoi("9223372036854775806"));
-//     return (0);
-// }

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kojwatan < kojwatan@student.42tokyo.jp>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/09/28 17:45:37 by kojwatan          #+#    #+#             */
+/*   Updated: 2023/09/28 18:57:35 by kojwatan         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 static int	count_words(char const *s, char c)
@@ -53,7 +65,8 @@ static char	**split_alloc(char **strs, char *str, char c, int end)
 			str++;
 			count++;
 		}
-		if ((strs[i] = (char *)malloc(count + 1)) == NULL)
+		strs[i] = (char *)malloc(count + 1);
+		if (strs[i] == NULL)
 		{
 			free_all(strs, i);
 			return (NULL);
@@ -64,20 +77,13 @@ static char	**split_alloc(char **strs, char *str, char c, int end)
 	return (strs);
 }
 
-char	**ft_split(char const *s, char c)
+char	**split_help(char **strs, char *s, char c)
 {
-	char **strs;
-	int i;
-	int j;
+	int	i;
+	int	j;
 
-	if (s == NULL)
-		return (NULL);
 	i = 0;
 	j = 0;
-	if ((strs = malloc(sizeof(char *) * (count_words(s, c) + 1))) == NULL)
-		return (NULL);
-	if ((strs = split_alloc(strs, (char *)s, c, count_words(s, c))) == NULL)
-		return (NULL);
 	while (strs[i])
 	{
 		while (*s == c)
@@ -90,4 +96,23 @@ char	**ft_split(char const *s, char c)
 		j = 0;
 	}
 	return (strs);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	char	**strs;
+	int		i;
+	int		j;
+
+	if (s == NULL)
+		return (NULL);
+	i = 0;
+	j = 0;
+	strs = malloc(sizeof(char *) * (count_words(s, c) + 1));
+	if (strs == NULL)
+		return (NULL);
+	strs = split_alloc(strs, (char *)s, c, count_words(s, c));
+	if (strs == NULL)
+		return (NULL);
+	return (split_help(strs, s, c));
 }

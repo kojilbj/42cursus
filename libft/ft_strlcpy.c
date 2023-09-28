@@ -6,7 +6,7 @@
 /*   By: kojwatan < kojwatan@student.42tokyo.jp>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/15 09:22:10 by kojwatan          #+#    #+#             */
-/*   Updated: 2023/09/21 14:35:28 by kojwatan         ###   ########.fr       */
+/*   Updated: 2023/09/28 18:46:19 by kojwatan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	size_t length;
-	size_t i;
+	size_t	length;
+	size_t	i;
 
 	length = 0;
 	i = 0;
