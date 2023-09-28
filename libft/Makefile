@@ -38,7 +38,7 @@ SRCS =	ft_isalpha.c \
 		ft_striteri.c \
 		ft_split.c
 
-BONUS_SRCS_FILES =	ft_lstnew.c ft_lstadd_front.c ft_lstsize.c \
+BONUS_SRCS =	ft_lstnew.c ft_lstadd_front.c ft_lstsize.c \
 					ft_lstlast.c \
 					ft_lstadd_back.c \
 					ft_lstdelone.c \
@@ -47,12 +47,14 @@ BONUS_SRCS_FILES =	ft_lstnew.c ft_lstadd_front.c ft_lstsize.c \
 					ft_lstmap.c
 
 ifdef WITH_BONUS
-	SRCS += $(BONUS_SRCS_FILES)
+	SRCS += $(BONUS_SRCS)
+	OBJS += $(BONUS_OBJS)
 endif
 
 HEAD = libft.h
 
 OBJS = $(SRCS:.c=.o)
+BONUS_OBJS = $(BONUS_SRCS:.c=.o)
 
 all: $(NAME)
 
@@ -64,7 +66,7 @@ $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) -I $(HEAD) -c $< -o $@
 
 clean:
-	rm -f $(OBJS)
+	rm -f $(OBJS) $(BONUS_OBJS)
 
 fclean: clean
 	rm -f $(NAME)
