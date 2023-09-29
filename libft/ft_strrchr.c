@@ -14,20 +14,20 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	char			*str;
-	char			*ans;
-	unsigned int	i;
+	unsigned char			*str;
+	unsigned char			*ans;
+	unsigned char	i;
 
 	i = c;
-	str = (char *)s;
+	str = (unsigned char *)s;
 	ans = 0;
 	while (*str)
 	{
-		if (*str == i % 128)
+		if (*str == i)
 			ans = str;
 		str++;
 	}
 	if (c == 0)
-		return (str);
-	return (ans);
+		return ((char *)(str));
+	return ((char *)(ans));
 }

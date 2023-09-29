@@ -101,13 +101,9 @@ char	**split_help(char **strs, char *s, char c)
 char	**ft_split(char const *s, char c)
 {
 	char	**strs;
-	int		i;
-	int		j;
 
 	if (s == NULL)
 		return (NULL);
-	i = 0;
-	j = 0;
 	strs = malloc(sizeof(char *) * (count_words(s, c) + 1));
 	if (strs == NULL)
 		return (NULL);

@@ -14,7 +14,14 @@ ft_toupper:    [OK]
 ft_tolower:    [OK] 
 ft_strchr:     [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
 ft_strrchr:    [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
-ft_strncmp:    [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
+ft_strncmp:    [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [NO CRASH] 
+[no crash]: your strncmp does not segfault when null parameter is sent
+Test code:
+	ft_strncmp("nope", ((void *)0), 3);
+
+	ft_strncmp(((void *)0), ((void *)0), 3);
+
+
 ft_strlcpy:    [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
 ft_strlcat:    [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
 ft_strnstr:    [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
@@ -31,13 +38,13 @@ ft_putchar_fd: [OK] [OK]
 ft_putstr_fd:  [OK] [OK] {protected}
 ft_putendl_fd: [OK] [OK] {protected}
 ft_putnbr_fd:  [OK] [OK] [OK] [OK] [OK] 
-ft_lstnew:     [MISSING]
-ft_lstadd_front: [MISSING]
-ft_lstsize:    [MISSING]
-ft_lstlast:    [MISSING]
-ft_lstadd_back:[MISSING]
-ft_lstdelone:  [MISSING]
-ft_lstclear:   [MISSING]
-ft_lstiter:    [MISSING]
-ft_lstmap:     [MISSING]
+ft_lstnew:     [OK] [OK] [OK] [OK] 
+ft_lstadd_front: [OK] [OK] [OK] 
+ft_lstsize:    [OK] [OK] 
+ft_lstlast:    [OK] [OK] 
+ft_lstadd_back:[OK] [OK] [OK] 
+ft_lstdelone:  [OK] {protected}
+ft_lstclear:   [OK] [OK] [OK] {protected}
+ft_lstiter:    [OK] {protected}
+ft_lstmap:     [OK] {protected}
 ft_striteri:   [OK] [OK] {protected}

@@ -15,19 +15,20 @@
 static long	ft_strtol(const char *str, int sign)
 {
 	long	result;
+	long	tmp;
 
 	result = 0;
 	while (*str && *str >= '0' && *str <= '9')
 	{
-		if (result > LONG_MAX / 10 || (result == LONG_MAX / 10 && (*str
-					- '0' > LONG_MAX % 10)))
+		tmp = result;
+		result = result * 10 + *str - '0';
+		if (result < tmp)
 		{
 			if (sign == -1)
 				return (LONG_MIN);
 			else
 				return (LONG_MAX);
 		}
-		result = result * 10 + *str - '0';
 		str++;
 	}
 	return (result * sign);

@@ -14,7 +14,7 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char	*substr;
+	unsigned char	*substr;
 	size_t	i;
 
 	i = 0;
@@ -36,5 +36,5 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 			break ;
 	}
 	substr[i] = 0;
-	return (substr);
+	return ((char *)(substr));
 }
