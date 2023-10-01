@@ -6,7 +6,7 @@
 /*   By: kojwatan < kojwatan@student.42tokyo.jp>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 17:46:08 by kojwatan          #+#    #+#             */
-/*   Updated: 2023/09/28 21:46:50 by kojwatan         ###   ########.fr       */
+/*   Updated: 2023/10/01 14:24:15 by kojwatan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	unsigned char	*substr;
-	size_t	i;
+	size_t			i;
 
 	i = 0;
 	if (s == NULL)

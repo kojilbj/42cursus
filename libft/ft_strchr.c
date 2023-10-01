@@ -6,7 +6,7 @@
 /*   By: kojwatan < kojwatan@student.42tokyo.jp>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 17:45:40 by kojwatan          #+#    #+#             */
-/*   Updated: 2023/09/28 18:45:33 by kojwatan         ###   ########.fr       */
+/*   Updated: 2023/10/01 14:24:04 by kojwatan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	unsigned char			*str;
+	unsigned char	*str;
 	unsigned char	i;
 
 	i = c;
