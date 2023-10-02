@@ -1,25 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kojwatan < kojwatan@student.42tokyo.jp>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/28 17:45:54 by kojwatan          #+#    #+#             */
-/*   Updated: 2023/09/28 18:46:24 by kojwatan         ###   ########.fr       */
+/*   Created: 2023/09/28 17:44:26 by kojwatan          #+#    #+#             */
+/*   Updated: 2023/09/28 17:44:27 by kojwatan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+int	ft_isascii(int c)
 {
-	size_t	length;
-
-	if(s == NULL)
-		return 0;
-	length = 0;
-	while (s[length])
-		length++;
-	return (length);
+	if (c >= 0 && c <= 127)
+		return (1);
+	return (0);
 }
