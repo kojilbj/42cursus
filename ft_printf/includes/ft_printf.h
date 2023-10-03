@@ -8,7 +8,7 @@
 int	print_c(int c);
 int     print_d(int nbr);
 int     print_p(void *address);
-int	print_s(char *str);
+int	print_s(const char *str);
 int	print_u(unsigned int nbr);
 int     print_x_cap(unsigned int nbr);
 int     print_x(unsigned int nbr);
