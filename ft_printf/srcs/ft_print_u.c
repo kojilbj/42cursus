@@ -1,4 +1,4 @@
-#include "libft.h"
+#include "ft_printf.h"
 
 void	ft_putnbr_u(unsigned int nbr)
 {
@@ -23,6 +23,8 @@ int	print_u(unsigned int nbr)
 
         digit = 0;
         ft_putnbr_u(nbr);
+        if(nbr == 0)
+                return 1;
         if(nbr < 0)
         {
             nbr *= -1;

@@ -1,13 +1,9 @@
-#include "ft_printf.h"
+#include "./includes/ft_printf.h"
+#include "./includes/libft.h"
 #include <stdio.h>
 
 int     main(void)
 {
-	char *c;
-
-	c = NULL;
-	int i = ft_printf("%pHello, world!\n", c);
-	int k = printf("%pHello, world!\n", c);
-	printf("%d\n", i - k);
+	printf("%s", NULL);
 }
 

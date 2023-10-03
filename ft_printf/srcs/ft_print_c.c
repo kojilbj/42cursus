@@ -1,7 +1,10 @@
-#include "libft.h"
+#include "ft_printf.h"
 
-int	print_c(char c)
+int	print_c(int c)
 {
-	ft_putchar_fd(c, 1);
+	unsigned char	uc;
+
+	uc = c;
+	write(1, &uc, 1);
 	return (1);
 }

@@ -1,17 +1,4 @@
-#include "libft.h"
-
-static int     digit_deci_to_hexa(size_t nbr)
-{
-        int     digit;
-
-        digit = 0;
-        while(nbr > 0)
-        {
-                digit++;
-                nbr /= 16;
-        }
-        return (digit);
-}
+#include "ft_printf.h"
 
 int     print_x_cap(unsigned int nbr)
 {
@@ -21,6 +8,12 @@ int     print_x_cap(unsigned int nbr)
 
         digit_hexa = 0;
         i = 1;
+        ft_bzero(buf, 16);
+        if(nbr == 0)
+        {
+                ft_putchar_fd('0', 1);
+                return 1;
+        }
         digit_hexa = digit_deci_to_hexa(nbr);
         while(nbr > 0)
         {
