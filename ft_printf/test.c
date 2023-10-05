@@ -4,6 +4,7 @@
 
 int     main(void)
 {
-	printf("%s", NULL);
+	ft_printf("%p\n", LONG_MAX);
+	printf("%p\n", LONG_MAX);
 }
 
