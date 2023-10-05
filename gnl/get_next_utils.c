@@ -1,5 +1,17 @@
 #include "get_next_line.h"
 
+size_t	ft_strlen(const char *s)
+{
+	size_t	length;
+
+	if(s == NULL)
+		return 0;
+	length = 0;
+	while (s[length])
+		length++;
+	return (length);
+}
+
 char    *ft_strjoin(char const *s1, char const *s2)
 {
         char    *str_joined;
@@ -45,4 +57,43 @@ char	*ft_strchr(const char *s, int c)
 	if (c == 0)
 		return ((char *)(str));
 	return (0);
+}
+
+char    *linecpy(char *str)
+{
+        size_t  length;
+        size_t  i;
+        char    *line;
+        length = 0;
+        while (str[length] != '\n')
+                length++;
+        line = malloc(length + 1);
+        i = 0;
+        while (length > i)
+        {
+                line[i] = str[i];
+                i++;
+        }
+        line[i] = 0;
+        return line;
+}
+
+void    save_to_buff(char *src, char *dst)
+{
+        size_t  i;
+        size_t  k;
+
+        i = 0;
+        k = 0;
+        while(src[i])
+        {
+                while(src[i] != '\n')
+                {
+                        printf("i : %zu\n", i);
+                        i++;
+                }
+                i++;
+                dst[k++] = src[i++];
+        }
+        dst[k] = 0;
 }
