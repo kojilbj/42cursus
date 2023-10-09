@@ -10,12 +10,14 @@
 #define buffer_size BUFFER_SIZE
 
 #endif
-
+#ifndef BUFFER_SIZE
+#define BUFFER_SIZE 10
+#endif
 char    *get_next_line(int fd);
 size_t	ft_strlen(const char *s);
 char    *ft_strjoin(char const *s1, char const *s2);
 char	*ft_strchr(const char *s, int c);
 char    *linecpy(char *str);
-void    save_to_buff(char *src, char *dst);
+char    *save_to_buff(char *src);
 
 #endif

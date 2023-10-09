@@ -5,17 +5,17 @@
 int main(void)
 {
     int fd = open("test.c", O_RDONLY);
-    char *str = get_next_line(fd);
-    printf("%s\n", str);
-    // str = get_next_line(fd);
-    // printf("%s\n", str);
-    // str = get_next_line(fd);
-    // printf("%s\n", str);
-    // str = get_next_line(fd);
-    // printf("%s\n", str);
-    // str = get_next_line(fd);
-    // printf("%s\n", str);
+    char *str;
+    int i;
+
+    i = 0;
+    while(i < 21)
+    {
+        str = get_next_line(fd);
+        printf("%s", str);
+        free(str);
+        i++;
+    }
     close(fd);
-    free(str);
     return 0;
 }
