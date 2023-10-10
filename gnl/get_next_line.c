@@ -9,21 +9,28 @@ char    *get_next_line(int fd)
     ssize_t i;
     static  char *save_buffer = NULL;
 
+    if (fd <= 0)
+        return NULL;
 	if (save_buffer == NULL)
-		save_buffer = malloc(buffer_size + 1);
+		save_buffer = malloc(BUFFER_SIZE + 1);
 	if (save_buffer == NULL)
 		return NULL;
     str = save_buffer;
-    buffer = malloc(buffer_size + 1);
+    buffer = malloc(BUFFER_SIZE + 1);
     if(buffer == NULL)
         return NULL;
-    i = 1;
+    i = read(fd, buffer, BUFFER_SIZE);
+    if(i <= 0)
+    {
+        free(buffer);
+        free(str);
+        return NULL;
+    }
     while(i > 0)
     {
-        i = read(fd, buffer, buffer_size);
-        if(i < 0)
-            break;;
         buffer[i] = 0;
+        if(buffer[0] == 26)
+            return NULL;
         new_str = ft_strjoin(str, buffer);
         if(new_str == NULL)
         {
@@ -35,6 +42,7 @@ char    *get_next_line(int fd)
         str = new_str;
         if(ft_strchr(str, '\n') || ft_strchr(str, 26))
             break;
+        i = read(fd, buffer, BUFFER_SIZE);
     }
     next_line = linecpy(str);
     if(next_line == NULL)

@@ -68,6 +68,8 @@ char    *linecpy(char *str)
     if(str == NULL)
         return NULL;
     length = 0;
+    if(str[0] == 26)
+        return NULL;
     while (str[length] != '\n' && str[length] != 26 && str[length])
         length++;
     line = malloc(length + 2);

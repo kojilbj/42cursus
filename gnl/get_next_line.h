@@ -5,9 +5,9 @@
 #include <unistd.h>
 #include <stdio.h>
 
-#ifdef BUFFER_SIZE
-# define buffer_size BUFFER_SIZE
-#endif
+// #ifdef BUFFER_SIZE
+// # define buffer_size BUFFER_SIZE
+// #endif
 
 #ifndef BUFFER_SIZE
 #define BUFFER_SIZE 10
