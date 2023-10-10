@@ -5,6 +5,7 @@ char    *get_next_line(int fd)
     char    *str;
     char    *buffer;
     char    *next_line;
+    char    *new_str;
     ssize_t i;
     static  char *save_buffer = NULL;
 
@@ -23,13 +24,15 @@ char    *get_next_line(int fd)
         if(i < 0)
             break;;
         buffer[i] = 0;
-        str = ft_strjoin(str, buffer);
-        if(str == NULL)
+        new_str = ft_strjoin(str, buffer);
+        if(new_str == NULL)
         {
             free(buffer);
             free(save_buffer);
             return NULL;
         }
+        free(str);
+        str = new_str;
         if(ft_strchr(str, '\n') || ft_strchr(str, 26))
             break;
     }
