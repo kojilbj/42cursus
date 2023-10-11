@@ -36,10 +36,10 @@ int	decide_fomat(char c, va_list *ap)
 	return (0);
 }
 
-int ft_printf(const char *str, ...)
+int	ft_printf(const char *str, ...)
 {
-	int	length;
-	va_list ap;
+	int		length;
+	va_list	ap;
 
 	va_start(ap, str);
 	length = 0;
