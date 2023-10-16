@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: watanabekoji <watanabekoji@student.42.f    +#+  +:+       +#+        */
+/*   By: kojwatan < kojwatan@student.42tokyo.jp>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 17:42:43 by watanabekoj       #+#    #+#             */
-/*   Updated: 2023/10/15 17:42:44 by watanabekoj      ###   ########.fr       */
+/*   Updated: 2023/10/16 18:23:48 by kojwatan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,7 +107,7 @@ char	*save_to_buff(char *src)
 	k = 0;
 	while (src[i] && src[i] != '\n')
 		i++;
-	if (src[i + 1] == 0 || src[i] == 0)
+	if (src[i] == 0 || src[i + 1] == 0)
 		return (NULL);
 	dest = (char *)malloc(ft_strlen((char *)&src[++i]) + 1);
 	if (dest == NULL)
