@@ -11,16 +11,27 @@ int main(int ac, char *av[], char *env[])
 {
 	char	*file1;
 	char	*file2;
+	char	*path_line;
+	char	**paths;
 	char	*path;
 
-	if(ac != 5)
-		return 0;
-	path = ft_strjoin("/bin/", av[2]);
-	file1 = av[1];
-	file2 = av[4];
-	printf("file1 = %s\n", file1);
-	printf("file2 = %s\n", file2);
-	printf("path = %s\n", path);
-	printf("access = %i", access(path, X_OK));
+	while(*env)
+	{
+		if(strncmp(*env, "PATH", 4) == 0)
+			path_line = *env;
+		env++;
+	}
+	path_line = ft_strchr(path_line, '/');
+	paths = ft_split(path_line, ':');
+	path = NULL;
+	while (*paths)
+	{
+		if(path == NULL && access(*paths, X_OK) == 0)
+			path = ft_strdup(*paths);
+		free(*paths);
+		paths++;
+	}
+	free(paths);
+	printf("PARH = %s\n", path);
 	return 0;
 }
