@@ -6,11 +6,11 @@
 /*   By: kojwatan < kojwatan@student.42tokyo.jp>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 18:07:02 by kojwatan          #+#    #+#             */
-/*   Updated: 2023/10/10 18:07:03 by kojwatan         ###   ########.fr       */
+/*   Updated: 2023/11/21 17:54:35 by kojwatan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
 int	decide_fomat(char c, va_list *ap)
 {

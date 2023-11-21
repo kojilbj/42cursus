@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_x.c                                       :+:      :+:    :+:   */
+/*   ft_print_x_cap.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kojwatan < kojwatan@student.42tokyo.jp>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/10 18:06:59 by kojwatan          #+#    #+#             */
-/*   Updated: 2023/10/10 18:07:00 by kojwatan         ###   ########.fr       */
+/*   Created: 2023/10/10 18:06:57 by kojwatan          #+#    #+#             */
+/*   Updated: 2023/11/21 17:54:22 by kojwatan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int	print_x(unsigned int nbr)
+int	print_x_cap(unsigned int nbr)
 {
 	char	buf[16];
 	int		i;
@@ -29,7 +29,7 @@ int	print_x(unsigned int nbr)
 	digit_hexa = digit_deci_to_hexa(nbr);
 	while (nbr > 0)
 	{
-		buf[digit_hexa - i] = "0123456789abcdef"[nbr % 16];
+		buf[digit_hexa - i] = "0123456789ABCDEF"[nbr % 16];
 		i++;
 		nbr /= 16;
 	}

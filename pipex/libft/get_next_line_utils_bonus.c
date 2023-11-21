@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*   get_next_line_utils_bonus.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kojwatan < kojwatan@student.42tokyo.jp>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/15 17:42:43 by watanabekoj       #+#    #+#             */
-/*   Updated: 2023/10/16 18:23:48 by kojwatan         ###   ########.fr       */
+/*   Created: 2023/10/15 17:42:41 by watanabekoj       #+#    #+#             */
+/*   Updated: 2023/11/21 17:47:00 by kojwatan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "libft.h"
 
-size_t	ft_strlen(const char *s)
-{
-	size_t	length;
+// size_t	ft_strlen(const char *s)
+// {
+// 	size_t	length;
 
-	length = 0;
-	if (s == NULL || s[length] == 0)
-		return (0);
-	while (s[length])
-		length++;
-	return (length);
-}
+// 	length = 0;
+// 	if (s == NULL || s[length] == 0)
+// 		return (0);
+// 	while (s[length])
+// 		length++;
+// 	return (length);
+// }
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin_gnl(char const *s1, char const *s2)
 {
 	char	*str_joined;
 	int		i;
@@ -53,23 +53,23 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	return (str_joined);
 }
 
-char	*ft_strchr(const char *s, int c)
-{
-	unsigned char	*str;
-	unsigned char	i;
+// char	*ft_strchr(const char *s, int c)
+// {
+// 	unsigned char	*str;
+// 	unsigned char	i;
 
-	i = c;
-	str = (unsigned char *)s;
-	while (str && *str)
-	{
-		if (*str == i)
-			return ((char *)(str));
-		str++;
-	}
-	if (c == 0)
-		return ((char *)(str));
-	return (NULL);
-}
+// 	i = c;
+// 	str = (unsigned char *)s;
+// 	while (str && *str)
+// 	{
+// 		if (*str == i)
+// 			return ((char *)(str));
+// 		str++;
+// 	}
+// 	if (c == 0)
+// 		return ((char *)(str));
+// 	return (NULL);
+// }
 
 char	*linecpy(char *str)
 {

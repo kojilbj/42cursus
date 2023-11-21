@@ -6,11 +6,11 @@
 /*   By: kojwatan < kojwatan@student.42tokyo.jp>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 18:06:55 by kojwatan          #+#    #+#             */
-/*   Updated: 2023/10/10 18:06:56 by kojwatan         ###   ########.fr       */
+/*   Updated: 2023/11/21 17:54:17 by kojwatan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
 void	ft_putnbr_u(unsigned int nbr)
 {

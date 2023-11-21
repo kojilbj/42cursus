@@ -6,7 +6,7 @@
 /*   By: kojwatan < kojwatan@student.42tokyo.jp>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 17:46:25 by kojwatan          #+#    #+#             */
-/*   Updated: 2023/09/28 17:48:40 by kojwatan         ###   ########.fr       */
+/*   Updated: 2023/11/21 18:06:37 by kojwatan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,17 @@
 # include <limits.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdarg.h>
 
 typedef struct s_list
 {
 	void	*content;
 	void	*next;
 }			t_list;
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 10
+# endif
 
 int			ft_atoi(const char *str);
 void		ft_bzero(void *s, size_t n);
@@ -66,5 +71,23 @@ void		ft_lstdelone(t_list *lst, void (*del)(void *));
 void		ft_lstclear(t_list **lst, void (*del)(void *));
 void		ft_lstiter(t_list *lst, void (*f)(void *));
 t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+
+//ft_printf
+int	print_c(int c);
+int	print_d(int nbr);
+int	print_p(void *address);
+int	print_s(const char *str);
+int	print_u(unsigned int nbr);
+int	print_x_cap(unsigned int nbr);
+int	print_x(unsigned int nbr);
+int	decide_fomat(char c, va_list *arg);
+int	ft_printf(const char *str, ...);
+int	digit_deci_to_hexa(size_t nbr);
+
+//gnl
+char	*get_next_line(int fd);
+char	*ft_strjoin_gnl(char const *s1, char const *s2);
+char	*linecpy(char *str);
+char	*save_to_buff(char *src);
 
 #endif
