@@ -6,7 +6,7 @@
 /*   By: kojwatan < kojwatan@student.42tokyo.jp>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 18:05:00 by kojwatan          #+#    #+#             */
-/*   Updated: 2023/11/21 18:07:12 by kojwatan         ###   ########.fr       */
+/*   Updated: 2023/11/21 19:36:05 by kojwatan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,7 @@ const char	*get_path(char *cmd, char *env[])
 		env++;
 	}
 	if (ft_strchr(cmd, '/'))
-	{
+	{	
 		if (check_absopath(cmd))
 			return (cmd);
 	}
@@ -118,7 +118,7 @@ const char	*get_path(char *cmd, char *env[])
 		free(cmd);
 	}
 	if (path == NULL)
-		exit_on_failure(get_shell_basename(env));
+		exit_on_failure("command not found\n");
 	return (path);
 }
 
@@ -126,8 +126,7 @@ void	open_infile_outfile(int fds_infile_outfile[2], char *infile,
 		char *outfile, char *env[])
 {
 	fds_infile_outfile[0] = open(infile, O_RDONLY);
-	fds_infile_outfile[1] = open(outfile, O_WRONLY | O_TRUNC | O_CREAT,
-		S_IRUSR | S_IWUSR);
+	fds_infile_outfile[1] = open(outfile, O_WRONLY | O_TRUNC | O_CREAT);
 	if (fds_infile_outfile[0] == -1 || fds_infile_outfile[1] == -1)
 		exit_on_failure(get_shell_basename(env));
 }

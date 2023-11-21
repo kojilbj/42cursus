@@ -13,7 +13,7 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	$(MAKE) -C ./libft
-	$(CC) $(CFLAGS) -I $(HEAD) $(OBJS) -o $(NAME) -L./libft -lft
+	$(CC) $(CFLAGS) -I $(HEAD) $(OBJS) -o $(NAME) -L./libft -lft -g -fsanitize=address
 
 %.o: %.c
 	$(CC) $(CFLAGS) -I $(HEAD) -c $< -o $@
