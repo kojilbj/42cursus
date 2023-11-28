@@ -6,7 +6,7 @@
 /*   By: kojwatan < kojwatan@student.42tokyo.jp>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 17:46:25 by kojwatan          #+#    #+#             */
-/*   Updated: 2023/11/21 18:06:37 by kojwatan         ###   ########.fr       */
+/*   Updated: 2023/11/28 16:37:17 by kojwatan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdarg.h>
-
+# include <stdio.h>
 typedef struct s_list
 {
 	void	*content;
