@@ -1,7 +1,7 @@
 CC = cc
 CFLAGS = -Wextra -Wall -Werror -g -fsanitize=address
 
-SRCS = ./server.c ./client.c
+SRCS = ./server.c ./client.c ./modified_atoi.c
 OBJS = $(SRCS:.c=.o)
 NAME = server client
 
@@ -13,7 +13,7 @@ server: $(OBJS)
 
 client: $(OBJS)
 	$(MAKE) -C ./libft
-	$(CC) $(CFLAGS) client.c -o client -L./libft -lft
+	$(CC) $(CFLAGS) client.o modified_atoi.o -o client -L./libft -lft
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
