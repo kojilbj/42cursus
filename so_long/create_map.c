@@ -3,7 +3,7 @@
 void	create_window(t_vars *vars, t_map_info map_info)
 {
 	vars->mlx = mlx_init();
-	vars->win = mlx_new_window(vars->mlx, map_info.width * 64, map_info.height * 64, "so_long");
+	vars->win = mlx_new_window(vars->mlx, map_info.width * PANEL_SIZE, map_info.height * PANEL_SIZE, "so_long");
 }
 
 void	mapping_background(t_vars vars, t_map_info map_info)
@@ -20,7 +20,7 @@ void	mapping_background(t_vars vars, t_map_info map_info)
 		j = 0;
 		while(j < map_info.width)
 		{
-			mlx_put_image_to_window(vars.mlx, vars.win, img, j * 64, i * 64);
+			mlx_put_image_to_window(vars.mlx, vars.win, img, j * PANEL_SIZE, i * PANEL_SIZE);
 			j++;
 		}
 		i++;
@@ -65,7 +65,7 @@ void	put_map_to_window(t_vars vars, t_map_info map_info)
 		j = 0;
 		while(j < map_info.width)
 		{
-			mlx_put_image_to_window(vars.mlx, vars.win, map_info.map[i][j].img, j * 64, i * 64);
+			mlx_put_image_to_window(vars.mlx, vars.win, map_info.map[i][j].img, j * PANEL_SIZE, i * PANEL_SIZE);
 			j++;
 		}
 		i++;
